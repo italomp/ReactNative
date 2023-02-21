@@ -6,10 +6,13 @@ type NavigatgionProps = {
 }
 
 export default function Home(props: NavigatgionProps){
+    let params = {
+        text: "Texto/parâmetro enviado da HOME"
+    }
     return(
         <View>
             <Text>Home</Text>
-            <Button title="Go to About" onPress={() => props.navigation.navigate("About")}/>
+            <Button title="Go to About" onPress={() => props.navigation.navigate("About", params)}/>
         </View>
     );
 }

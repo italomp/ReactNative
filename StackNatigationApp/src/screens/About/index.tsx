@@ -3,13 +3,16 @@ import { Text, View, Button } from "react-native";
 
 type NavigatgionProps = {
     navigation: any;
+    route: any;
 }
 
 export default function About(props: NavigatgionProps){
+    let receivedParam = props.route.params;
     return(
         <View>
             <Text>About</Text>
-            <Button title="Go to Home" onPress={() => props.navigation.navigate("Home")}/>
+            <Text>{receivedParam.text}</Text>
+            <Button title="Go to Home" onPress={() => props.navigation.goBack()}/>
         </View>
     );
 }
